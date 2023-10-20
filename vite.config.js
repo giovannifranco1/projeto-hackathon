@@ -12,7 +12,8 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/scss/style.scss',
-                'resources/css/filament/admin/theme.css'
+                'resources/css/filament/admin/theme.css',
+                'resources/images/favicon.png',
             ],
             refresh: [
                 ...refreshPaths,
