@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nome_comunidade');
             $table->string('nome_lider');
             $table->string('cidade_proxima');
+            $table->boolean('seeded')->default(false);
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->enum('regiao', ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul']);

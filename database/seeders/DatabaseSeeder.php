@@ -49,5 +49,6 @@ class DatabaseSeeder extends Seeder
         ];
 
         \App\Models\CategoriaRecurso::factory()->createMany($itensCategoria);
+        \App\Models\SolicitacaoRecurso::factory()->count(30)->create();
     }
 }

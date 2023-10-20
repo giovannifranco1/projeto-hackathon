@@ -14,6 +14,10 @@ class SolicitacaoRecursoObserver
      */
     public function created(SolicitacaoRecurso $soliciacaoRecurso): void
     {
+        if ($soliciacaoRecurso->seeded) {
+            return;
+        }
+
         Notification::make()
             ->title('Solicitação de recurso criada')
             ->success()
