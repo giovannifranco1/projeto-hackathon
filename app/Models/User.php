@@ -20,6 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'arquivo_avatar',
+        'active',
         'password',
     ];
 
@@ -41,5 +43,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+    ];
+
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
+
+    public function isUser()
+    {
+        return !$this->is_admin || $this->is_admin;
+    }
+
+    const ROLES = [
+        'admin' => 'admin',
+        'user' => 'user'
     ];
 }

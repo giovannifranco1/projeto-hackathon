@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('active')->default(true);
+            $table->boolean('is_admin');
+            $table->string('arquivo_avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

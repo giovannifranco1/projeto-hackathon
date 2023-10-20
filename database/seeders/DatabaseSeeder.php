@@ -12,11 +12,42 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'is_admin' => true
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'Apinaje',
+            'email' => 'apinaje@gmail.com',
+            'is_admin' => false
+        ]);
+
+
+        $itensCategoria = [
+            [
+                'nome' => 'Alimentação',
+            ],
+            [
+                'nome' => 'Livro',
+            ],
+            [
+                'nome' => 'Material Escola',
+            ],
+            [
+                'nome' => 'Material de Construção',
+            ],
+            [
+                'nome' => 'Moradia',
+            ],
+            [
+                'nome' => 'Outros'
+            ]
+        ];
+
+        \App\Models\CategoriaRecurso::factory()->createMany($itensCategoria);
     }
 }
