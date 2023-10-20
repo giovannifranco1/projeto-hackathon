@@ -38,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->sidebarCollapsibleOnDesktop()
-            ->darkMode(false)
+            ->darkMode(isForced: false)
             ->id('admin')
             ->path('admin')
             ->login()
